@@ -3,55 +3,41 @@
  */
 package com.github.chentianle1993.mavenJunit;
 
-import static org.junit.Assert.*;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import junit.framework.TestCase;
 
 /**
  * @author chentianle
  *
  */
-public class CalculatorTest {
+public class CalculatorTest extends TestCase {
 
 	/**
-	 * @throws java.lang.Exception
+	 * @param name
 	 */
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
+	public CalculatorTest(String name) {
+		super(name);
 	}
 
-	/**
-	 * @throws java.lang.Exception
+	/* (non-Javadoc)
+	 * @see junit.framework.TestCase#setUp()
 	 */
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
+	protected void setUp() throws Exception {
+		super.setUp();
 	}
 
-	/**
-	 * @throws java.lang.Exception
+	/* (non-Javadoc)
+	 * @see junit.framework.TestCase#tearDown()
 	 */
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@After
-	public void tearDown() throws Exception {
+	protected void tearDown() throws Exception {
+		super.tearDown();
 	}
 
 	/**
 	 * Test method for {@link com.github.chentianle1993.mavenJunit.Calculator#add(int, int)}.
 	 */
-	@Test
 	public final void testAdd() {
 		//fail("Not yet implemented"); // TODO
-		assertEquals(6, new Calculator().add(1, 5));
+		assertEquals(6, new Calculator().add(3, 3));
 	}
 
 }
